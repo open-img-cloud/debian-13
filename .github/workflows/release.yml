@@ -50,7 +50,7 @@ jobs:
     with:
       os_name: debian-13
       version: ${{ needs.resolve-version.outputs.version }}
-      output_filename: 'debian-13-{version}-x86_64.qcow2'
+      output_filename: 'debian-{version}-x86_64.qcow2'
       upstream_url: 'https://cloud.debian.org/images/cloud/trixie/{version_suffix}/debian-13-genericcloud-amd64-{version_suffix}.qcow2'
       upstream_checksum_url: 'https://cloud.debian.org/images/cloud/trixie/{version_suffix}/SHA512SUMS'
       decompress: none

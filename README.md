@@ -25,7 +25,7 @@ Debian 13 is the current stable release: security support until **2028-08**, the
 
 ## Image
 
-- File: `debian-13-<version>-x86_64.qcow2`, where `<version>` is
+- File: `debian-<version>-x86_64.qcow2`, where `<version>` is
   `<major>-<upstream build id>` (e.g. `13-20261103-2651`).
 - Default user: `debian` (SSH key from cloud-init, passwordless sudo).
 - The root filesystem grows to the flavor disk on first boot.
@@ -34,12 +34,12 @@ Debian 13 is the current stable release: security support until **2028-08**, the
 
 ```sh
 V=13-20261103-2651
-curl -fLO https://images.openimages.cloud/debian-13/$V/debian-13-$V-x86_64.qcow2
+curl -fLO https://images.openimages.cloud/debian-13/$V/debian-$V-x86_64.qcow2
 
 openstack image create \
     --disk-format qcow2 --container-format bare \
     --property hw_qemu_guest_agent=yes \
-    --file debian-13-$V-x86_64.qcow2 \
+    --file debian-$V-x86_64.qcow2 \
     'Debian 13 '$V
 ```
 
